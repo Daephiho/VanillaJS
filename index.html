@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Momentum App</title>
+</head>
+<body>
+    <div id="namePlace">
+        <form id="login-form" class="hidden">
+            <input placeholder="What is your name?" required>
+            <button>Log in</button>
+        </form>
+        <span class="hidden"></span>  <span class="material-icons" id="editIcon">edit</span>
+    </div>
+
+    <div id="weather">
+        <span></span><br>
+        <span></span>
+    </div>
+
+    <h2 id="clock1">00:00:00</h2>
+    <h2 id="clock2" class="hidden">00:00:00</h2>
+    <label class="switch">
+        <input id="noSecBtn" type="button" value="Sec"> 
+    </label>
+
+    <div id="quote">
+        <span></span><br>
+        <span></span>
+    </div>
+    
+    <form id="todo-form">
+        <input placeholder="Write a todo and press enter" size="22px" required>
+    </form>
+    <ul id="todo-list">
+    </ul>
+
+    <script src="JS/greeting.js"></script>
+    <script src="JS/clock.js"></script>
+    <script src="JS/quotes.js"></script>
+    <script src="JS/background.js"></script>
+    <script src="JS/todo.js"></script>
+    <script src="JS/weather.js"></script>
+</body>
+</html>

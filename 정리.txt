@@ -1,0 +1,129 @@
+ prompt 메서드는 매우매우 오래된 기능. 스타일을 적용할 수 없어서 촌스럽다. 잘 안 쓴다. 
+ 요즘엔 각자 만든 모달 팝업을 사용한다. 모달 창을 만드는 법을 배워야겠다. 
+ const age = parseInt(prompt("yo age?"));
+
+ console.log(isNaN(age));    // isNaN: 숫자가 아니냐? => 숫자=false / 문자열=true
+
+ if(isNaN(age)) {
+     alert("please write a number");
+ } else if(age < 18) {
+     alert("you are too young");
+ } else if (age >= 18 && age <= 50) {    // &&(and): 둘 다 true여야 true 반환 / ||(or): 둘 중 하나만 true여도 true 반환
+     alert("you can drink");
+ } else {
+     alert("you can't drink");
+ }
+
+
+// HTML - JavaScript : 스크립트태그를 넣었을 때 부터 HTML과 JavaScript는 이미 연결되어 있다. 우린 준비되어 있는 걸 사용하면 됨.
+// document.title = "Hello JS";    // Momentum -> Hello JS
+
+// const title = document.getElementById("title");   // html 안에 id가 title인 요소를 가져옴
+// console.dir(title); // 불러온 요소에 대한 모오오오든 정보를 출력함
+
+// title.innerText = "hi this is innerText";
+
+const titre = document.querySelector(".hello h1");  // hello라는 클래스 안의 h1태그를 가져온다. 
+console.log(titre);                                 // "div h1"처럼 그냥 태그명으로도 가능하다.
+// 결과가 중복될 경우 querySelector는 첫 번째 요소만 가져온다. 모두 가져오고 싶을 땐 querySelectorAll 사용
+
+
+// 3.3 Event(클릭, 호버 등)
+titre.style.color = "blue";     // 스타일을 자바스크립트로도 바꿀 수 있다.
+
+function mouseenter() {
+    titre.innerText = "mouse is here!!"   
+}
+
+function mouseleave() {
+    titre.innerText = "mouse is gone!!"   
+}
+
+function mouseOver() {
+    titre.style.cursor = "pointer";
+}
+
+function titreClick() {
+    console.log("titre was clicked!!!");
+    titre.innerHTML = "Click me!!"       
+    titre.style.color = "red";     
+    // innerText와 innerHTML의 차이:     
+    // 내부 문자를 가져올때 html 태그를 문자로 인식할지, 태그로 인식할지의 차이
+    // innerText는 가져온 텍스트에 포함된 태그도 하나의 텍스트로 인삭하여 보여줌.
+    // innerHTML은 가져온 텍스트에 포함된 태그를 인식하여 태그를 적용시킨 후 문자를 보여줌
+}
+
+// 3.6 
+function titreClick() {
+    const currentColor = titre.style.color;
+    let newColor;
+
+    if(currentColor === "blue") {  // getter
+        newColor = "tomato";   // setter
+    } else if(currentColor === "tomato") {
+        newColor = "blue";
+    }
+    titre.style.color = newColor;
+}
+
+function handleWindowResize() {
+    document.body.style.backgroundColor = "tomato"; // document.body/head/title만 가능
+}
+
+function handleWindowCopy() {
+    alert("copier!!");
+}
+
+function handleWindowOffline() {
+    alert("SOS no WiFi !!");
+}
+
+function handleWindowOnline() {
+    alert("All Good !")
+}
+
+// 3.5 addEventListner: 말 그대로 특정 이벤트를 듣는(감지하는) 함수. 
+
+titre.addEventListener("click", titreClick);  // titre를 클릭하면 titreClick 함수가 실행됨.
+     // 함수 뒤에 괄호를 붙이면 페이지 실행과 동시에 해당 함수가 그냥 실행되어버리니 주의
+titre.onmouseenter = mouseenter;    // addEventListner를 생략하고 원하는 이벤트명 앞에 on을 붙여서 사용가능.
+titre.onmouseleave = mouseleave;
+titre.addEventListener("mouseover", mouseOver);
+
+window.addEventListener("resize", handleWindowResize);  // 브라우저의 사이즈를 변경하면 작동함.
+window.addEventListener("copy", handleWindowCopy);  // ctrl + c 할 경우 작동함.
+window.addEventListener("offline", handleWindowOffline);    // 인터넷 연결 끊기면 작동
+window.addEventListener("online", handleWindowOnline);      // 연결되면 작동
+
+// 3.6
+
+// function titreClick() {
+//    // 자바스크립트에서 직접적으로 스타일을 바꾸기보다는
+//    // 자바스크립트로는 html에 변화를 주고 css를 통해서 스타일을 적용하는게 옳다.
+    
+//    const clickedClass = "active";   // 변수를 만들어서 오타에 의한 오류 발생 최소화
+//     if(titre.className === clickedClass) {  // active = tomato  // className = 이전 class명은 상관없이 아예 교체해버림
+//         titre.className = "";   // none = conflowerblue
+//     } else {
+//         titre.className = clickedClass;
+//     }
+// }
+
+// function titreClick() {
+
+//     const clickedClass = "active";  
+//      if(titre.classList.contains(clickedClass)) {  // titre의 class목록 중 clickedClass가 있냐고 물음.
+//          titre.classList.remove(clickedClass);
+//      } else {
+//          titre.classList.add(clickedClass)
+//      }
+//  }
+
+// 3.7 ~ 3.8
+// toggle 함수로 위 다섯 줄의 코드를 한 줄로 줄이기. 켜고 끄기의 개념.
+function titreClick() {
+    titre.classList.toggle("active");   // 토글 함수는 titre에 active라는 클래스가 있으면 없애고, 반대로 없으면 넣어준다.
+}
+
+titre.addEventListener("click", titreClick);
+

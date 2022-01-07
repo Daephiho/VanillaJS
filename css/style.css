@@ -1,0 +1,68 @@
+body {
+    font-family: 'Lora', serif;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#namePlace {
+    margin-right: 1400px;
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+#clock1, #clock2 {
+    font-size: 150px;
+    margin-bottom: 0px;
+}
+
+.switch {
+    margin-left: 350px;
+}
+
+#weather {
+    margin-left: 1500px;
+}
+
+#quote {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+#quote :first-child{
+    font-size: 30px;
+}
+#quote :last-child{
+    font-size: 20px;
+}
+
+#todo-form {
+    margin-right: 300px;
+}
+
+#todo-list {
+    list-style: none;
+    margin-left: 700px;
+    padding-left: 3px;
+    text-align: left;
+    width: 187px;
+    background-color: #ffffff;
+    background-color: rgba( 255, 255, 255, 0.5 );
+}
+
+#todo-list, button {
+    text-align: right;
+}
+
+img {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+    opacity: 80%;
+}
