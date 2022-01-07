@@ -6,8 +6,9 @@ const API_KEY = "48bcd3bce3fd5d94f931381110f43627";
 function onGeoOk(position) {
     const latitude = position.coords.latitude;     // 위도
     const longitude = position.coords.longitude; // 경도
+
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`   
-    // fetch(): 자바스크립트가 url을 불러줌. 끝에 units=metric 붙여줘야 섭씨 온도로 나옴.
+    // fetch(): 자바스크립트가 url을 불러줌. 끝에 units=metric 붙여줘야 섭씨 온도로 나옴..
     fetch(url).then(response => response.json()).then(data => {
         const location = data.name;
         const temp = data.main.temp;
