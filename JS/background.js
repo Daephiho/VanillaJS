@@ -1,4 +1,4 @@
-const images = ["image5.jfif"];
+const images = ["image5.jfif", "image4.jfif", "image6.jfif", "image7.jfif"];
 
 const chosenImage = images[Math.floor(Math.random() * images.length)];  // floor로 내렸기때문에 3은 절대로 안 나옴. 오직 0 1 2 
 

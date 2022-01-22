@@ -22,13 +22,8 @@ function submitClick(event) {  // 함수에 인자를 넣어주면 방금 일어
     paintGreetings(username);
 }
 
-// function linkClick(event) { 
-//     event.preventDefault(); 
-//     console.log(event); // 콘솔창에서 해당 이벤트가 PointerEvent인 걸 알 수 있고 클릭한 위치의 좌표도 알 수 있음.
-//     alert("click!!")
-// }
 
-// 4.5 유저 정보 저장하기.  => localStorage: 브라우저 기본 API로 브라우저에 무언가를 저장할 수 있게 해줌. 작은 DB라고 생각하면 됨.
+// 유저 정보 저장.  => localStorage: 브라우저 기본 API로 브라우저에 무언가를 저장할 수 있게 해줌. 작은 DB라고 생각하면 됨.
 // localStorage.setItem("username", "Ahn");     username=key / Ahn=value
 
 function paintGreetings(username) {

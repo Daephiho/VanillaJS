@@ -10,19 +10,20 @@
     <title>Momentum App</title>
 </head>
 <body>
-    <div id="namePlace">
-        <form id="login-form" class="hidden">
-            <input placeholder="What is your name?" required>
-            <button>Log in</button>
-        </form>
-        <span class="hidden"></span>  <span class="material-icons" id="editIcon">edit</span>
-    </div>
+    <div style="display: flex;">
+        <div id="namePlace">
+            <form id="login-form" class="hidden">
+                <input placeholder="What is your name?" style="border:none; border-radius: 5px; text-align:center; opacity: 0.8;" required>
+                <button style="border: none; border-radius: 10px; background-color: white;">Log in</button>
+            </form>
+            <span class="hidden"></span>  <span class="material-icons" id="editIcon">edit</span>
+        </div>
 
-    <div id="weather">
-        <span></span><br>
-        <span></span>
+        <div id="weather">
+            <span></span><br>
+            <span></span>
+        </div>
     </div>
-
     <h2 id="clock1">00:00:00</h2>
     <h2 id="clock2" class="hidden">00:00:00</h2>
     <label class="switch">
@@ -34,13 +35,13 @@
         <span></span>
     </div>
     
-    <form id="todo-form">
-        <input placeholder="Write a todo and press enter" size="22px" required>
-    </form>
-    <ul id="todo-list">
-    </ul>
-
-    <!-- 커밋 테스트 -->
+    <div id="todo">
+        <form id="todo-form">
+            <input placeholder="Write and press enter" size="25px" style="border:none; border-radius: 5px; text-align:center; opacity: 0.8;" required>
+        </form>
+        <ul id="todo-list">
+        </ul>
+    </div>
 
     <script src="JS/greeting.js"></script>
     <script src="JS/clock.js"></script>
